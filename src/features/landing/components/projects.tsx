@@ -1,0 +1,47 @@
+import { Project } from "@/lib/prisma.server";
+type Props = {
+  data: Project[];
+};
+export const Projects = (props: Props) => {
+  const { data } = props;
+  return (
+    <section className="py-10 md:py-16">
+      <div className="container max-w-screen-xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row justify-between">
+          <div className="mb-10 lg:mb-0">
+            <h1 className="font-medium text-gray-700 text-3xl md:text-4xl mb-5">
+              Projects
+            </h1>
+
+            <p className="font-normal text-gray-500 text-xs md:text-base">
+              I have brought here my biggest and favorite works <br /> as a
+              professional.
+            </p>
+          </div>
+
+          <div className="space-y-24">
+            {data.map((d, index) => (
+              <div key={d.id} className="flex space-x-6">
+                <h1 className="font-normal text-gray-700 text-3xl md:text-4xl">
+                  {index + 1}
+                </h1>
+
+                <span className="w-28 h-0.5 bg-gray-300 mt-5"></span>
+
+                <div>
+                  <h1 className="font-normal text-gray-700 text-3xl md:text-4xl mb-5">
+                    {d.title}
+                  </h1>
+
+                  <p className="font-normal text-gray-500 text-sm md:text-base">
+                    {d.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

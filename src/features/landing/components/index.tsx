@@ -1,0 +1,9 @@
+export { Brands } from "./brands";
+export { Educations } from "./educations";
+export { Experiences } from "./experiences";
+export { Footer } from "./footer";
+export { Hero } from "./hero";
+export { Info } from "./info";
+export { Projects } from "./projects";
+export { Quots } from "./quots";
+export { Testimonials } from "./testimonial";
